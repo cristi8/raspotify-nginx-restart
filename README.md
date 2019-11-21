@@ -18,6 +18,16 @@ So I can now do a `POST` request to `/restart-raspotify` on my raspotify device 
 - `nginx-extras`   (for the lua script)
 
 ## Install
+Get the files with either:
+```bash
+git clone https://github.com/cristi8/raspotify-nginx-restart.git
+```
+or
+```bash
+wget [TODO]
+```
+
+
 To install the daemon:
 ```bash
 cd daemon
@@ -50,7 +60,11 @@ To install the nginx part, copy/edit this location block to the nginx site confi
 
 
 ## Uninstall
+To uninstall the daemon:
+
 ```bash
 cd daemon
-make install
+make uninstall
 ```
+
+And then remove the /restart-raspotify location from nginx config.
