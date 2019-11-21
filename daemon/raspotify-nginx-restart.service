@@ -1,0 +1,15 @@
+[Unit]
+Description=Restart Raspotify from web API
+After=raspotify.service
+
+[Service]
+User=root
+Group=root
+Restart=always
+RestartSec=10
+PermissionsStartOnly=true
+ExecStartPre=/usr/bin/touch /etc/restart-raspotify ; /bin/chown www-data:www-data /etc/restart-raspotify
+ExecStart=/usr/sbin/raspotify-nginx-restart.py
+
+[Install]
+WantedBy=multi-user.target
