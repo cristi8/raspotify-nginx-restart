@@ -1,0 +1,15 @@
+
+    location /restart-raspotify {
+        ## Optional: Set up nginx access control like allow only some source ip addresses or set up basicauth
+
+        ## Optional: Only allow POST requests
+        # if ( $request_method != POST ) { return 405; }
+
+        default_type application/json;
+        content_by_lua '
+            local file = assert(io.open("/etc/restart-raspotify", "w"), "Inaccessible file")
+            file:write("1")
+            file:close()
+            ngx.say("{\\"success\\": 1}")
+        ';
+    }
