@@ -18,13 +18,16 @@ So I can now do a `POST` request to `/restart-raspotify` on my raspotify device 
 - `nginx-extras`   (for the lua script)
 
 ## Install
-Get the files with either:
+On the Raspberry Pi, get the files with either:
 ```bash
 git clone https://github.com/cristi8/raspotify-nginx-restart.git
+cd raspotify-nginx-restart
 ```
 or
 ```bash
-wget [TODO]
+wget https://github.com/cristi8/raspotify-nginx-restart/archive/master.zip
+unzip master.zip
+cd raspotify-nginx-restart-master
 ```
 
 
